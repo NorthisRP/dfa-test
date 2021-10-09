@@ -1,0 +1,73 @@
+@import "colors";
+@import "variables";
+
+body {
+  background-color: $main-color;
+  color: white;
+  margin: 0;
+}
+
+.window {
+  display: flex;
+}
+
+.title {
+  font-size: 40px;
+  margin: 0;
+  @media screen and (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: $header_height;
+}
+
+p {
+  font-size: 12px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  cursor: pointer;
+  & > :hover {
+    color: $text;
+  }
+  & > p {
+    margin: 0 20px;
+    color: $inactive_text;
+  }
+  &.active > p {
+    color: $text;
+  }
+}
+
+svg,
+img {
+  width: $img_size;
+  height: $img_size;
+}
+
+.panel {
+  height: calc(100vh - #{$header_height});
+  width: 20vw;
+  padding: #{$header_height} 10px;
+  box-sizing: border-box;
+  & > .link.active {
+    border-left: 4px solid #6781f7;
+  }
+  @media screen and (max-width: 1000px) {
+    .link {
+      justify-content: center;
+      & > p {
+        display: none;
+      }
+    }
+  }
+}

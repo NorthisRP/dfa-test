@@ -1,0 +1,61 @@
+@import "colors";
+@import "variables";
+
+.content {
+  background-color: $content_background;
+  border-radius: 50px 50px 0 0;
+  padding: 50px;
+  min-height: calc(100vh - #{$header_height});
+  width: 78vw;
+  box-sizing: border-box;
+}
+.card {
+  width: 120px;
+  margin: 35px 35px 0 0;
+  background-color: $main-color;
+  border-radius: 20px;
+  padding: 20px;
+  &--subtitle > p {
+    font-size: 8px;
+  }
+  & > div > p {
+    margin: 4px;
+    width: 60px;
+  }
+  &--title {
+    border-bottom: 1px solid $second_color;
+  }
+  &--content {
+    margin-top: 16px;
+    height: 130px;
+    overflow: auto;
+    & > .row {
+      opacity: 50%;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        opacity: 100%;
+      }
+      & > p {
+        margin-left: 10px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 1px;
+      background-color: $main-color;
+      &-thumb {
+        background-color: $second_color;
+      }
+    }
+  }
+}
+.row {
+  display: flex;
+  align-items: center;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
